@@ -17,7 +17,6 @@ interface IndexPageProps {
 
 const IndexPage = ({ data }: IndexPageProps) => (
   <div>
-    <h1>Hi people</h1>
     <Card>
       <Box color="primary">Testi</Box>
     </Card>
