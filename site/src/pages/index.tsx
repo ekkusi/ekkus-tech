@@ -1,5 +1,7 @@
 import React from "react";
 import { graphql, Link } from "gatsby";
+import { Box } from "@chakra-ui/react";
+import { Card } from "gatsby-theme-ekkus-design-library";
 
 // Please note that you can use https://github.com/dotansimha/graphql-code-generator
 // to generate all types from graphQL schema
@@ -16,6 +18,9 @@ interface IndexPageProps {
 const IndexPage = ({ data }: IndexPageProps) => (
   <div>
     <h1>Hi people</h1>
+    <Card>
+      <Box color="primary">Testi</Box>
+    </Card>
     <p>
       Welcome to your new <strong>{data.site.siteMetadata.title}</strong> site.
     </p>

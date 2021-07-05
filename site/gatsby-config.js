@@ -6,5 +6,6 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     // Add typescript stack into webpack
     `gatsby-plugin-typescript`,
+    `gatsby-theme-ekkus-design-library`,
   ],
 };
