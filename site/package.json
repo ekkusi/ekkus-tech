@@ -1,0 +1,35 @@
+{
+  "name": "site",
+  "description": "Ekku's Tech site",
+  "version": "1.0.0",
+  "author": "Ekku Sipilä",
+  "dependencies": {
+    "@chakra-ui/react": "^1.6.1",
+    "@emotion/react": "^11",
+    "@emotion/styled": "^11",
+    "@types/node": "^15.0.3",
+    "@types/react": "^17.0.5",
+    "@types/react-dom": "^17.0.5",
+    "framer-motion": "^4",
+    "gatsby": "^3.5.0",
+    "gatsby-plugin-react-helmet": "^4.5.0",
+    "gatsby-plugin-typescript": "^3.5.0",
+    "gatsby-theme-ekkus-design-library": "*",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-helmet": "^6.1.0"
+  },
+  "keywords": [
+    "gatsby, typescript"
+  ],
+  "license": "MIT",
+  "main": "n/a",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@types/react-helmet": "^6.1.1"
+  }
+}
