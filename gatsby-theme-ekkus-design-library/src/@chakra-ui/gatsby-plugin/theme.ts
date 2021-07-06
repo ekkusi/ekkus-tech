@@ -1,15 +1,18 @@
 import { extendTheme } from "@chakra-ui/react";
+import componentStyles from "../../componentStyles";
+import globalStyles from "../../globalStyles";
 
 const theme = {
-  colors: {
-    primary: "rebeccapurple",
-  },
   styles: {
-    global: {
-      p: {
-        fontSize: "20px",
-      },
-    },
+    global: globalStyles,
   },
+  components: componentStyles,
+  // components: {
+  //   Heading: {
+  //     baseStyle: {
+  //       textTransform: "uppercase",
+  //     },
+  //   },
+  // },
 };
 export default extendTheme(theme);
