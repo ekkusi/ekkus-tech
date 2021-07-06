@@ -28,7 +28,7 @@
   "scripts": {
     "develop": "concurrently \"yarn --cwd site develop\" \"yarn --cwd gatsby-theme-ekkus-design-library\"",
     "site:develop": "yarn --cwd site develop",
-    "build": "yarn --cwd frontend build",
+    "build": "yarn --cwd site build",
     "stop": "bash scripts/killall.sh"
   }
 }
