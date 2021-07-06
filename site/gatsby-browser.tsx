@@ -1,20 +1,17 @@
-// import React, { useEffect } from "react";
-// import { PageProps, WrapPageElementNodeArgs } from "gatsby";
+import React from "react";
+import { WrapPageElementNodeArgs } from "gatsby";
+import { AnimatePresence } from "framer-motion";
 // import { globalHistory } from "@reach/router";
 
-// export const wrapPageElement = ({
-//   props,
-//   element,
-// }: WrapPageElementNodeArgs) => {
-//   // useEffect(() => {
-//   //   console.log(props);
-//   //   console.log(element);
-//   // });
+export const wrapPageElement = ({ element }: WrapPageElementNodeArgs) => {
+  // useEffect(() => {
+  //   console.log(props);
+  //   console.log(element);
+  // });
 
-//   return (
-//     <>
-//       <RouteChangeListener {...props} />
-//       {element}
-//     </>
-//   );
-// };
+  return (
+    <>
+      <AnimatePresence exitBeforeEnter>{element}</AnimatePresence>
+    </>
+  );
+};
