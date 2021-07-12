@@ -1,6 +1,7 @@
 import { Text, ListItem, UnorderedList, Box, Flex } from "@chakra-ui/react";
 import React from "react";
 import { Heading } from "gatsby-theme-ekkus-design-library";
+import { StaticImage } from "gatsby-plugin-image";
 import Layout from "../components/Layout";
 import { lineHeight } from "../gatsby-theme-ekkus-design-library/globalStyles";
 
@@ -9,6 +10,7 @@ const ContactPage = (): JSX.Element => {
     <Layout title="Ota yhteyttä">
       <Heading.H1>Etsin jatkuvasti:</Heading.H1>
       <UnorderedList>
+        <StaticImage src="../../static/polaroid.png" alt="polaroid" />
         <ListItem>
           Mieltä kutkuttavia projekteja, joihin lyöttäytyä mukaan
         </ListItem>

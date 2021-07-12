@@ -68,7 +68,7 @@ const Layout = ({
             {/* <Header /> */}
             <Container
               as="main"
-              px={{ base: "3", xl: "5" }}
+              px={{ base: "3", xl: "10" }}
               pb="10"
               maxWidth="auto"
             >
