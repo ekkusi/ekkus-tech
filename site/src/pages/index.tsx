@@ -42,7 +42,6 @@ const IndexPage = ({ data }: IndexPageProps) => {
       <Heading.H1 textAlign="center">{data.site.siteMetadata.title}</Heading.H1>
       <MotionText
         as="h3"
-        fontSize={{ base: "lg", md: "xl" }}
         fontStyle="italic"
         textAlign="center"
         initial={{ opacity: 0 }}

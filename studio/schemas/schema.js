@@ -36,6 +36,12 @@ export default createSchema({
           ...requiredValidation,
         },
         {
+          title: "Image",
+          name: "image",
+          type: "image",
+          ...requiredValidation,
+        },
+        {
           title: "Site url",
           name: "site_url",
           type: "url",

@@ -1,18 +1,17 @@
 import React from "react";
-import { SimpleGrid, Text } from "@chakra-ui/react";
+import { Flex, Text } from "@chakra-ui/react";
 import { graphql } from "gatsby";
 import { Heading } from "gatsby-theme-ekkus-design-library";
 
 import Layout from "../components/Layout";
 import { PageQuery } from "../types/PageQuery";
-import { lineHeight } from "../gatsby-theme-ekkus-design-library/globalStyles";
-import PostItContainer from "../components/PostItContainer";
+import PolaroidContainer from "../components/PolaroidContainer";
 
 const ProjectsPage = ({
   data,
 }: PageQuery<GatsbyTypes.ProjectsPageQuery>): JSX.Element => {
   const getRandomRotateDeg = () => {
-    let num = Math.floor(Math.random() * 10); // this will get a number between 1 and 99;
+    let num = Math.floor(Math.random() * 5); // this will get a number between 1 and 99;
     num *= Math.round(Math.random()) ? 1 : -1; // this will add
     return num;
   };
@@ -20,9 +19,14 @@ const ProjectsPage = ({
   return (
     <Layout title="Projektit">
       <Heading.H1 textAlign="center">Projektit</Heading.H1>
-      <SimpleGrid columns={{ base: 1, md: 2, xl: 3 }} spacing={lineHeight}>
+      <Flex wrap="wrap" justifyContent="space-around">
         {data.allSanityProject.edges.map(({ node }) => (
-          <PostItContainer transform={`rotate(${getRandomRotateDeg()}deg)`}>
+          <PolaroidContainer
+            title={node.name || ""}
+            imageData={node.image?.asset?.gatsbyImageData}
+            transform={`rotate(${getRandomRotateDeg()}deg)`}
+            width={{ base: "100%", sm: "500px" }}
+          >
             <Heading.H3 fontWeight="bold">{node.name}</Heading.H3>
             <Text mb="2">{node.description}</Text>
             {node.github_url && (
@@ -49,9 +53,9 @@ const ProjectsPage = ({
                 {"Sivulle ->"}
               </Text>
             )}
-          </PostItContainer>
+          </PolaroidContainer>
         ))}
-      </SimpleGrid>
+      </Flex>
     </Layout>
   );
 };
@@ -64,6 +68,11 @@ export const query = graphql`
       edges {
         node {
           id
+          image {
+            asset {
+              gatsbyImageData(width: 577, height: 624)
+            }
+          }
           github_url
           description
           name

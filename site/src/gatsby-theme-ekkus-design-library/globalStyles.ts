@@ -3,8 +3,8 @@ export const lineHeight = { base: "6.55vh", sm: "4.2vh" };
 export default {
   body: {
     fontSize: {
-      base: "md",
-      md: "lg",
+      base: "2xl",
+      md: "3xl",
     },
   },
   "p, a, span, h1, h2, h3, h4, h5, h6, ul, li": {
@@ -14,6 +14,6 @@ export default {
     lineHeight: 1,
   },
   h1: {
-    fontSize: "4xl",
+    fontSize: "6xl",
   },
 };

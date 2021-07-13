@@ -1,5 +1,5 @@
-import { Heading as ChakraHeading, HeadingProps } from "@chakra-ui/react";
 import React from "react";
+import { Heading as ChakraHeading, HeadingProps } from "@chakra-ui/react";
 import { lineHeight } from "../globalStyles";
 
 type HeadingType = {
@@ -12,7 +12,7 @@ const Heading: HeadingType = {
   H1: ({ children, ...rest }: HeadingProps) => (
     <ChakraHeading
       as="h1"
-      fontSize={{ base: "2xl", md: "4xl" }}
+      fontSize={{ base: "4xl", md: "6xl" }}
       lineHeight={lineHeight}
       {...rest}
     >
@@ -22,8 +22,7 @@ const Heading: HeadingType = {
   H2: ({ children, ...rest }: HeadingProps) => (
     <ChakraHeading
       as="h2"
-      fontSize={{ base: "xl", md: "2xl" }}
-      fontWeight="normal"
+      fontSize={{ base: "3xl", md: "5xl" }}
       lineHeight={lineHeight}
       {...rest}
     >
@@ -33,7 +32,7 @@ const Heading: HeadingType = {
   H3: ({ children, ...rest }: HeadingProps) => (
     <ChakraHeading
       as="h3"
-      fontSize={{ base: "lg", md: "xl" }}
+      fontSize={{ base: "2xl", md: "4xl" }}
       fontWeight="normal"
       lineHeight={lineHeight}
       {...rest}
