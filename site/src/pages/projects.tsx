@@ -18,16 +18,20 @@ const ProjectsPage = ({
 
   return (
     <Layout title="Projektit">
-      <Heading.H1 textAlign="center">Projektit</Heading.H1>
+      <Heading.H1 textAlign="center" mb={{ base: "5", sm: "10" }}>
+        Projektit
+      </Heading.H1>
       <Flex wrap="wrap" justifyContent="space-around">
         {data.allSanityProject.edges.map(({ node }) => (
           <PolaroidContainer
+            key={node.id}
             title={node.name || ""}
             imageData={node.image?.asset?.gatsbyImageData}
             transform={`rotate(${getRandomRotateDeg()}deg)`}
             width={{ base: "100%", sm: "500px" }}
+            mr={{ base: "0", md: "10" }}
+            mb={{ base: "5", sm: "10" }}
           >
-            <Heading.H3 fontWeight="bold">{node.name}</Heading.H3>
             <Text mb="2">{node.description}</Text>
             {node.github_url && (
               <Text
@@ -70,7 +74,7 @@ export const query = graphql`
           id
           image {
             asset {
-              gatsbyImageData(width: 577, height: 624)
+              gatsbyImageData(width: 500, height: 500)
             }
           }
           github_url

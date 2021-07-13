@@ -4,8 +4,10 @@ import { globalHistory } from "@reach/router";
 import {
   chakraMotionWrapper,
   Heading,
+  HoverUnderline,
 } from "gatsby-theme-ekkus-design-library";
-import { Text } from "@chakra-ui/react";
+import { Flex, Icon, Text } from "@chakra-ui/react";
+import { AiOutlineLinkedin, AiOutlineGithub } from "react-icons/ai";
 import NavigationTree from "../components/NavigationTree";
 import Layout from "../components/Layout";
 import useGlobal from "../store";
@@ -59,6 +61,26 @@ const IndexPage = ({ data }: IndexPageProps) => {
         transform="translateX(-50%)"
         transitionDelay={1}
       />
+      <Flex position="absolute" bottom="0">
+        <Text
+          as="a"
+          href="https://fi.linkedin.com/in/ekku-sipila"
+          target="_blank"
+          mr="5"
+        >
+          <Icon as={AiOutlineLinkedin} mb="1" mr="1" />
+          <HoverUnderline as="span">Linkedin</HoverUnderline>
+        </Text>
+        <Text
+          display="inline-block"
+          as="a"
+          href="https://github.com/ekkusi"
+          target="_blank"
+        >
+          <Icon as={AiOutlineGithub} mb="1" mr="1" />
+          <HoverUnderline as="span">Github</HoverUnderline>
+        </Text>
+      </Flex>
       {/* <Text
       as={Link}
       to="/projects"

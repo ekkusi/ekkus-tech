@@ -68,9 +68,11 @@ const Layout = ({
             {/* <Header /> */}
             <Container
               as="main"
+              flex="1"
               px={{ base: "3", xl: "10" }}
               pb="10"
               maxWidth="auto"
+              position="relative"
             >
               {children}
             </Container>
