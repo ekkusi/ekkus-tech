@@ -46,6 +46,7 @@ const PolaroidContainer = ({
             backfaceVisibility: "hidden",
             borderRadius: "5px",
             bg: "#DADADA",
+            zIndex: 10,
           },
         }}
       >
