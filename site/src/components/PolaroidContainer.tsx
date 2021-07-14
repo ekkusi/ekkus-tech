@@ -55,7 +55,6 @@ const PolaroidContainer = ({
               image={imageData}
               alt="Polaroid sub image"
               position="absolute"
-              zIndex={5}
               width="80%"
               height="75%"
               bg="black"
