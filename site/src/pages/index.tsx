@@ -81,28 +81,6 @@ const IndexPage = ({ data }: IndexPageProps) => {
           <HoverUnderline as="span">Github</HoverUnderline>
         </Text>
       </Flex>
-      {/* <Text
-      as={Link}
-      to="/projects"
-      fontSize="3xl"
-      fontWeight="bold"
-      position="absolute"
-      top="49vh"
-      left="33%"
-    >
-      Projektit
-    </Text>
-    <Text
-      as={Link}
-      to="/contact"
-      fontSize="3xl"
-      fontWeight="bold"
-      position="absolute"
-      top="42vh"
-      left="61%"
-    >
-      Ota yhteyttä
-    </Text> */}
     </Layout>
   );
 };

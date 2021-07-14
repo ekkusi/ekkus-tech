@@ -1,5 +1,5 @@
 import { Box, BoxProps, Text, TextProps } from "@chakra-ui/react";
-import { motion } from "framer-motion";
+import { motion, SVGMotionProps } from "framer-motion";
 import React, { useState } from "react";
 
 import { navigate, Link } from "gatsby";
@@ -14,7 +14,7 @@ type NavigationTreeProps = Omit<BoxProps, "transitionDelay"> & {
 const MotionBox = chakraMotionWrapper(Box);
 const MotionText = chakraMotionWrapper(Text);
 
-type TreeLinkProps = TextProps & {
+type TreeLinkProps = SVGMotionProps<SVGTextElement> & {
   to: string;
   duration: number;
   delay: number;
@@ -28,11 +28,7 @@ const TreeLink = ({
   children,
   ...textProps
 }: TreeLinkProps) => (
-  <MotionText
-    as={Link}
-    to={to}
-    fontSize="3xl"
-    fontWeight="bold"
+  <motion.text
     onClick={() => navigate(to)}
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
@@ -40,11 +36,11 @@ const TreeLink = ({
       delay,
       duration,
     }}
-    pt="10"
     {...textProps}
+    cursor="pointer"
   >
     {children}
-  </MotionText>
+  </motion.text>
 );
 
 const hoverVariants = {
@@ -141,40 +137,55 @@ const NavigationTree = ({
           stroke="#000"
           fill="none"
         />
-        <foreignObject x="120" y="220" width="200" height="50">
-          <TreeLink
-            to="/projects"
-            delay={hasVisitedFrontPage ? 0.5 : 3 + transitionDelay}
-            duration={1}
-            onMouseEnter={() => {
-              console.log("Mouse enter projects");
-              setIsHoveringProjects(true);
-            }}
-            onMouseLeave={() => {
-              console.log("Mouse leave projects");
-              setIsHoveringProjects(false);
-            }}
-          >
-            Projektit
-          </TreeLink>
-        </foreignObject>
-        <foreignObject x="580" y="150" width="200" height="50">
-          <TreeLink
-            to="/contact"
-            delay={hasVisitedFrontPage ? 1 : 3.5 + transitionDelay}
-            duration={1}
-            onMouseEnter={() => {
-              console.log("Mouse enter contact");
-              setIsHoveringContact(true);
-            }}
-            onMouseLeave={() => {
-              console.log("Mouse leave contact");
-              setIsHoveringContact(false);
-            }}
-          >
-            Ota yhteyttä
-          </TreeLink>
-        </foreignObject>
+        {/* <motion.text
+          x="120"
+          y="260"
+          width="200"
+          height="50"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 5 }}
+        >
+          Projects
+        </motion.text> */}
+        {/* <foreignObject x="120" y="220" width="200" height="50"> */}
+        <TreeLink
+          x="130"
+          y="250"
+          width="200"
+          height="50"
+          to="/projects"
+          delay={hasVisitedFrontPage ? 0.5 : 3 + transitionDelay}
+          duration={1}
+          onMouseEnter={() => {
+            console.log("Mouse enter projects");
+            setIsHoveringProjects(true);
+          }}
+          onMouseLeave={() => {
+            console.log("Mouse leave projects");
+            setIsHoveringProjects(false);
+          }}
+        >
+          Projektit
+        </TreeLink>
+        {/* </foreignObject> */}
+        <TreeLink
+          x="580"
+          y="180"
+          width="200"
+          height="50"
+          to="/contact"
+          delay={hasVisitedFrontPage ? 1 : 3.5 + transitionDelay}
+          duration={1}
+          onMouseEnter={() => {
+            setIsHoveringContact(true);
+          }}
+          onMouseLeave={() => {
+            setIsHoveringContact(false);
+          }}
+        >
+          Ota yhteyttä
+        </TreeLink>
         <motion.path
           strokeWidth="2"
           {...getPathAnimation(3, 2 + transitionDelay)}
