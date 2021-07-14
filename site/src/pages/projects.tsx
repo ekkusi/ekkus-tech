@@ -23,41 +23,43 @@ const ProjectsPage = ({
       </Heading.H1>
       <Flex wrap="wrap" justifyContent="space-around">
         {data.allSanityProject.edges.map(({ node }) => (
-          <PolaroidContainer
-            key={node.id}
-            title={node.name || ""}
-            imageData={node.image?.asset?.gatsbyImageData}
-            transform={`rotate(${getRandomRotateDeg()}deg)`}
-            width={{ base: "100%", sm: "500px" }}
-            mr={{ base: "0", md: "10" }}
-            mb={{ base: "5", sm: "10" }}
-          >
-            <Text mb="2">{node.description}</Text>
-            {node.github_url && (
-              <Text
-                as="a"
-                target="_blank"
-                href={node.github_url}
-                display="block"
-                textDecoration="underline"
-                fontStyle="italic"
-              >
-                {"Koodiin ->"}
-              </Text>
-            )}
-            {node.site_url && (
-              <Text
-                as="a"
-                target="_blank"
-                textDecoration="underline"
-                fontStyle="italic"
-                href={node.site_url}
-                display="block"
-              >
-                {"Sivulle ->"}
-              </Text>
-            )}
-          </PolaroidContainer>
+          <>
+            <PolaroidContainer
+              key={node.id}
+              title={node.name || ""}
+              imageData={node.image?.asset?.gatsbyImageData}
+              transform={`rotate(${getRandomRotateDeg()}deg)`}
+              width={{ base: "100%", sm: "400px" }}
+              mr={{ base: "0", md: "10" }}
+              mb={{ base: "5", sm: "10" }}
+            >
+              <Text mb="2">{node.description}</Text>
+              {node.github_url && (
+                <Text
+                  as="a"
+                  target="_blank"
+                  href={node.github_url}
+                  display="block"
+                  textDecoration="underline"
+                  fontStyle="italic"
+                >
+                  {"Koodiin ->"}
+                </Text>
+              )}
+              {node.site_url && (
+                <Text
+                  as="a"
+                  target="_blank"
+                  textDecoration="underline"
+                  fontStyle="italic"
+                  href={node.site_url}
+                  display="block"
+                >
+                  {"Sivulle ->"}
+                </Text>
+              )}
+            </PolaroidContainer>
+          </>
         ))}
       </Flex>
     </Layout>
@@ -74,7 +76,11 @@ export const query = graphql`
           id
           image {
             asset {
-              gatsbyImageData(width: 500, height: 500)
+              gatsbyImageData(
+                width: 500
+                height: 500
+                backgroundColor: "#000000"
+              )
             }
           }
           github_url

@@ -1,88 +1,55 @@
 import { Box, BoxProps, Text } from "@chakra-ui/react";
 import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
-import React, { useState } from "react";
-import { chakraMotionWrapper } from "../../../gatsby-theme-ekkus-design-library";
-import Heading from "../gatsby-theme-ekkus-design-library/components/Heading";
+import React from "react";
+import { Heading } from "../../../gatsby-theme-ekkus-design-library";
 
 type PolaroidContainerProps = BoxProps & {
-  title: string;
   imageData?: IGatsbyImageData;
-};
-
-const BoxWithMotion = chakraMotionWrapper(Box);
-
-const variants = {
-  flipped: { rotateY: 180 },
-  notFlipped: { rotateY: 0 },
+  title: string;
 };
 
 const PolaroidContainer = ({
   children,
-  title,
   imageData,
+  title,
   ...boxProps
 }: PolaroidContainerProps): JSX.Element => {
-  const [isFlipped, setIsFlipped] = useState(false);
-
   return (
-    <BoxWithMotion
-      p="5"
-      {...boxProps}
-      position="relative"
-      __css={{ "& *": { lineHeight: "1.5em" } }}
-      cursor="pointer"
-      initial="notFlipped"
-      whileHover="flipped"
-      animate={isFlipped ? "flipped" : "notFlipped"}
-      onTouchEnd={() => {
-        setIsFlipped(!isFlipped);
-      }}
-      width="450px"
-      height={{ base: "100vw", sm: "500px" }}
+    <Box
+      bg="transparent"
+      width="350px"
+      height={{ base: "100vw", sm: "450px" }}
       maxWidth="100%"
+      _hover={{
+        "& > div": {
+          transform: "rotateY(180deg)",
+        },
+      }}
+      __css={{
+        "& *": { lineHeight: "1.5em" },
+        perspective: "1000px",
+      }}
+      {...boxProps}
     >
-      <BoxWithMotion
+      <Box
         position="relative"
         width="100%"
         height="100%"
-        variants={variants}
+        transition="transform 0.6s"
         boxShadow="lg"
-        bg="#DADADA"
-        borderRadius="5px"
-        transition={{ duration: 1 }}
         __css={{
           transformStyle: "preserve-3d",
+          "& > div": {
+            position: "absolute",
+            width: "100%",
+            height: "100%",
+            backfaceVisibility: "hidden",
+            borderRadius: "5px",
+          },
         }}
       >
-        <Box
-          position="relative"
-          width="100%"
-          height="100%"
-          transform="rotateY(0deg)"
-          __css={{
-            "&, & * ": {
-              backfaceVisibility: "hidden",
-              WebkitBackfaceVisibility: "hidden",
-            },
-          }}
-        >
-          <Box
-            position="absolute"
-            width="80%"
-            height="75%"
-            bg="black"
-            top="9%"
-            left="10%"
-          />
-          <Text
-            position="absolute"
-            top={{ base: -2, sm: 0 }}
-            left={{ base: "3", sm: "5" }}
-            fontSize="4xl"
-          >
-            x
-          </Text>
-          {imageData && (
+        <Box bg="#DADADA" color="black">
+          {imageData ? (
             <Box
               as={GatsbyImage}
               image={imageData}
@@ -94,8 +61,28 @@ const PolaroidContainer = ({
               bg="black"
               top="9%"
               left="10%"
+              __css={{
+                backfaceVisibility: "hidden",
+              }}
+            />
+          ) : (
+            <Box
+              position="absolute"
+              width="80%"
+              height="75%"
+              bg="black"
+              top="9%"
+              left="10%"
             />
           )}
+          <Text
+            position="absolute"
+            top={{ base: -2, sm: 0 }}
+            left={{ base: "3", sm: "5" }}
+            fontSize="4xl"
+          >
+            x
+          </Text>
           <Heading.H3
             position="absolute"
             bottom="1"
@@ -107,28 +94,14 @@ const PolaroidContainer = ({
           </Heading.H3>
         </Box>
         <Box
-          position="absolute"
-          top="0"
-          left="0"
-          width="100%"
-          height="100%"
           bg="#DADADA"
-          borderRadius="5px"
-          p={{ base: "5", sm: "10" }}
-          overflow="hidden"
           transform="rotateY(180deg)"
-          __css={{
-            "&, & * ": {
-              backfaceVisibility: "hidden",
-              WebkitBackfaceVisibility: "hidden",
-            },
-          }}
-          fontSize={{ base: "xl", sm: "3xl" }}
+          p={{ base: "5", sm: "10" }}
         >
           {children}
         </Box>
-      </BoxWithMotion>
-    </BoxWithMotion>
+      </Box>
+    </Box>
   );
 };
 
