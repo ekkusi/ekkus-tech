@@ -45,10 +45,11 @@ const PolaroidContainer = ({
             height: "100%",
             backfaceVisibility: "hidden",
             borderRadius: "5px",
+            bg: "#DADADA",
           },
         }}
       >
-        <Box bg="#DADADA" color="black">
+        <Box color="black">
           {imageData ? (
             <Box
               as={GatsbyImage}
@@ -92,11 +93,7 @@ const PolaroidContainer = ({
             {title}
           </Heading.H3>
         </Box>
-        <Box
-          bg="#DADADA"
-          transform="rotateY(180deg)"
-          p={{ base: "5", sm: "10" }}
-        >
+        <Box transform="rotateY(180deg)" p={{ base: "5", sm: "10" }} zIndex="5">
           {children}
         </Box>
       </Box>

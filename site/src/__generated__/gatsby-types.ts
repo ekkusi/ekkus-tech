@@ -979,7 +979,6 @@ type SitePluginPluginOptions = {
   readonly failOnError: Maybe<Scalars['Boolean']>;
   readonly projectId: Maybe<Scalars['String']>;
   readonly dataset: Maybe<Scalars['String']>;
-  readonly token: Maybe<Scalars['String']>;
   readonly graphqlTag: Maybe<Scalars['String']>;
   readonly path: Maybe<Scalars['String']>;
   readonly pathCheck: Maybe<Scalars['Boolean']>;
@@ -2480,7 +2479,6 @@ type SitePluginPluginOptionsFilterInput = {
   readonly failOnError: Maybe<BooleanQueryOperatorInput>;
   readonly projectId: Maybe<StringQueryOperatorInput>;
   readonly dataset: Maybe<StringQueryOperatorInput>;
-  readonly token: Maybe<StringQueryOperatorInput>;
   readonly graphqlTag: Maybe<StringQueryOperatorInput>;
   readonly path: Maybe<StringQueryOperatorInput>;
   readonly pathCheck: Maybe<BooleanQueryOperatorInput>;
@@ -2713,7 +2711,6 @@ type SitePageFieldsEnum =
   | 'pluginCreator.pluginOptions.failOnError'
   | 'pluginCreator.pluginOptions.projectId'
   | 'pluginCreator.pluginOptions.dataset'
-  | 'pluginCreator.pluginOptions.token'
   | 'pluginCreator.pluginOptions.graphqlTag'
   | 'pluginCreator.pluginOptions.path'
   | 'pluginCreator.pluginOptions.pathCheck'
@@ -3897,7 +3894,6 @@ type SitePluginFieldsEnum =
   | 'pluginOptions.failOnError'
   | 'pluginOptions.projectId'
   | 'pluginOptions.dataset'
-  | 'pluginOptions.token'
   | 'pluginOptions.graphqlTag'
   | 'pluginOptions.path'
   | 'pluginOptions.pathCheck'
