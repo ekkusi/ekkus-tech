@@ -1,8 +1,8 @@
-import { Box, BoxProps, Text, TextProps } from "@chakra-ui/react";
+import { Box, BoxProps, Text } from "@chakra-ui/react";
 import { motion, SVGMotionProps } from "framer-motion";
 import React, { useState } from "react";
 
-import { navigate, Link } from "gatsby";
+import { navigate } from "gatsby";
 
 import { chakraMotionWrapper } from "gatsby-theme-ekkus-design-library";
 import useGlobal from "../store";
@@ -28,7 +28,9 @@ const TreeLink = ({
   children,
   ...textProps
 }: TreeLinkProps) => (
-  <motion.text
+  <MotionText
+    as={motion.text}
+    fontSize="4xl"
     onClick={() => navigate(to)}
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
@@ -40,7 +42,7 @@ const TreeLink = ({
     cursor="pointer"
   >
     {children}
-  </motion.text>
+  </MotionText>
 );
 
 const hoverVariants = {
