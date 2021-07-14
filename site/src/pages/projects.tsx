@@ -18,10 +18,10 @@ const ProjectsPage = ({
 
   return (
     <Layout title="Projektit">
-      <Heading.H1 textAlign="center" mb={{ base: "5", sm: "10" }}>
+      <Heading.H1 textAlign="center" mb={{ base: "14", sm: "10" }}>
         Projektit
       </Heading.H1>
-      <Flex wrap="wrap" justifyContent="space-around">
+      <Flex wrap="wrap" justifyContent="space-around" px={{ base: 3, sm: 2 }}>
         {data.allSanityProject.edges.map(({ node }) => (
           <>
             <PolaroidContainer
@@ -31,7 +31,7 @@ const ProjectsPage = ({
               transform={`rotate(${getRandomRotateDeg()}deg)`}
               width={{ base: "100%", sm: "400px" }}
               mr={{ base: "0", md: "10" }}
-              mb={{ base: "5", sm: "10" }}
+              mb={{ base: "16", sm: "10" }}
             >
               <Text mb="2">{node.description}</Text>
               {node.github_url && (
