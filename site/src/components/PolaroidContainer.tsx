@@ -74,7 +74,12 @@ const PolaroidContainer = ({
             top="9%"
             left="10%"
           />
-          <Text position="absolute" top="0" left="5" fontSize="4xl">
+          <Text
+            position="absolute"
+            top={{ base: -2, sm: 0 }}
+            left={{ base: "3", sm: "5" }}
+            fontSize="4xl"
+          >
             x
           </Text>
           {imageData && (
