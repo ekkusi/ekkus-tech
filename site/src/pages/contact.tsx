@@ -29,13 +29,13 @@ const ContactPage = (): JSX.Element => {
           </Heading.H3>
           <Text
             as="a"
-            href="mailto:ekku.eki@gmail.com"
+            href="mailto:contact@ekkus.tech"
             textDecoration="underline"
             fontStyle="italic"
             fontWeight="bold"
             fontSize="2xl"
           >
-            ekku.eki@gmail.com
+            contact@ekkus.tech
           </Text>
         </Box>
       </Flex>
