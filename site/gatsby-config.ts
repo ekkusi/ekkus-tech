@@ -7,7 +7,7 @@ module.exports = {
     title: `Ekku's Tech`,
     description: "Yhden joka-paikan-koodarin IT-pulju",
     author: "Ekku Sipilä",
-    url: "https://ekkus.tech",
+    siteUrl: "https://ekkus.tech",
     image: "/static/icon.svg",
   },
   plugins: [
