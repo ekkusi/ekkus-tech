@@ -14,9 +14,14 @@ const ContactPage = (): JSX.Element => {
         <ListItem>
           Mieltä kutkuttavia projekteja, joihin lyöttäytyä mukaan
         </ListItem>
-        <ListItem>Lyhyitä tai keskipitkiä koodailukeikkoja</ListItem>
+        <ListItem>Lyhyehköjä tai keskipitkiä freelancing-keikkoja</ListItem>
         <br />
       </UnorderedList>
+      <Text>
+        Tarvitsetko apua nettisivujesi, sovelluksesi, pelisi tai minkä tahansa
+        muun koodin nyhräämisen ja teknisen hölömölön kanssa? Tästä sitä
+        löytyy:)
+      </Text>
       <Flex alignItems="center" justifyContent="center">
         <Box
           textAlign="center"
@@ -24,9 +29,7 @@ const ContactPage = (): JSX.Element => {
           border="2px solid black"
           borderRadius="50%"
         >
-          <Heading.H3>
-            Osuiko joku kohta? Ota yhteyttä, niin höpötellään:)
-          </Heading.H3>
+          <Heading.H3>Ota yhteyttä, niin höpötellään!</Heading.H3>
           <Text
             as="a"
             href="mailto:contact@ekkus.tech"
