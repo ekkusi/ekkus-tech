@@ -5,7 +5,7 @@ dotenv.config();
 module.exports = {
   siteMetadata: {
     title: `Ekku's Tech`,
-    description: "Independent tech house of E.S.",
+    description: "Yhden joka-paikan-koodarin IT-pulju",
     author: "Ekku Sipilä",
     url: "https://ekkus.tech",
     image: "/static/icon.svg",
