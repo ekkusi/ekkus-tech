@@ -19,7 +19,7 @@ const ProjectsPage = ({
   return (
     <Layout title="Projektit">
       <Heading.H1 textAlign="center" mb={{ base: "14", sm: "10" }}>
-        Projektit
+        Tämmöstä olen tehnyt
       </Heading.H1>
       <Flex wrap="wrap" justifyContent="space-around" px={{ base: 3, sm: 2 }}>
         {data.allSanityProject.edges.map(({ node }) => (
