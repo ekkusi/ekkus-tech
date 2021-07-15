@@ -50,7 +50,7 @@ const IndexPage = ({ data }: IndexPageProps) => {
         animate={{ opacity: 1 }}
         transition={{ duration: 1.5 }}
       >
-        Yhden sitä-sun-tätä-koodarin IT-pulju
+        Yhden joka-paikan-koodarin IT-pulju
       </MotionText>
       <NavigationTree
         width={{ base: "120%", md: "70%" }}
