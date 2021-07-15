@@ -7,6 +7,8 @@ module.exports = {
     title: `Ekku's Tech`,
     description: "Independent tech house of E.S.",
     author: "Ekku Sipilä",
+    url: "https://ekkus.tech",
+    image: "/static/icon.svg",
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -28,6 +30,18 @@ module.exports = {
         // If the Sanity GraphQL API was deployed using `--tag <name>`,
         // use `graphqlTag` to specify the tag name. Defaults to `default`.
         graphqlTag: "default",
+      },
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Ekku's Tech`,
+        short_name: `ekkus-tech`,
+        start_url: `/`,
+        background_color: `#DADADA`,
+        theme_color: `#DADADA`,
+        display: `minimal-ui`,
+        icon: `static/favicon.png`, // This path is relative to the root of the site.
       },
     },
   ],
