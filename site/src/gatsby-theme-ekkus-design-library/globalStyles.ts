@@ -1,4 +1,4 @@
-export const lineHeight = { base: "6.55vh", sm: "4.2vh" };
+export const lineHeight = { base: "6.55vh", sm: "4.28vh" };
 
 export default {
   body: {

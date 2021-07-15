@@ -17,7 +17,7 @@ const ContactPage = (): JSX.Element => {
         <ListItem>Lyhyehköjä tai keskipitkiä freelancing-keikkoja</ListItem>
         <br />
       </UnorderedList>
-      <Text>
+      <Text mb={lineHeight}>
         Tarvitsetko apua nettisivujesi, sovelluksesi, pelisi tai minkä tahansa
         muun koodin nyhräämisen ja teknisen hölömölön kanssa? Tästä sitä
         löytyy:)
