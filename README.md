@@ -1,3 +1,3 @@
 # Ekku's Tech
 
-![View site live](https://ekkus.tech)
+## View site lite: [www.ekkus.tech](www.ekkus.tech)
