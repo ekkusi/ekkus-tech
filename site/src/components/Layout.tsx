@@ -3,6 +3,7 @@ import * as React from "react";
 import { Box, BoxProps, Container, Flex } from "@chakra-ui/react";
 import { globalHistory } from "@reach/router";
 import { motion, TargetAndTransition, Variant } from "framer-motion";
+import { Helmet } from "react-helmet";
 import Seo from "./Seo";
 import Footer from "./Footer";
 
@@ -48,40 +49,47 @@ const Layout = ({
   },
 }: LayoutProps) => {
   return (
-    <Box position="relative">
-      <motion.div
-        key={globalHistory.location.pathname}
-        initial="from"
-        animate="to"
-        variants={animation}
-        exit={exitAnimation}
-        transition={{ duration: 1, ease: "easeOut" }}
-        style={{ originY: "20%", originX: 0, transformStyle: "preserve-3d" }}
-      >
-        <LayoutBackground position="relative" overflow="hidden">
-          <Seo title={title} />
-          <Flex
-            minHeight="100vh"
-            pt={{ base: "8.8vh", sm: "6.25vh" }}
-            direction="column"
-          >
-            {/* <Header /> */}
-            <Container
-              as="main"
-              flex="1"
-              px={{ base: "3", xl: "10" }}
-              pb="10"
-              maxWidth="auto"
-              position="relative"
+    <>
+      <Helmet>
+        <link rel="prefetch" href="/" />
+        <link rel="prefetch" href="/project" />
+        <link rel="prefetch" href="/contact" />
+      </Helmet>
+      <Box position="relative">
+        <motion.div
+          key={globalHistory.location.pathname}
+          initial="from"
+          animate="to"
+          variants={animation}
+          exit={exitAnimation}
+          transition={{ duration: 1, ease: "easeOut" }}
+          style={{ originY: "20%", originX: 0, transformStyle: "preserve-3d" }}
+        >
+          <LayoutBackground position="relative" overflow="hidden">
+            <Seo title={title} />
+            <Flex
+              minHeight="100vh"
+              pt={{ base: "8.8vh", sm: "6.25vh" }}
+              direction="column"
             >
-              {children}
-            </Container>
-            {!noFooter && <Footer mt="auto" />}{" "}
-          </Flex>
-        </LayoutBackground>
-      </motion.div>
-      <LayoutBackground position="absolute" top="0" left="0" zIndex="-1" />
-    </Box>
+              {/* <Header /> */}
+              <Container
+                as="main"
+                flex="1"
+                px={{ base: "3", xl: "10" }}
+                pb="10"
+                maxWidth="auto"
+                position="relative"
+              >
+                {children}
+              </Container>
+              {!noFooter && <Footer mt="auto" />}{" "}
+            </Flex>
+          </LayoutBackground>
+        </motion.div>
+        <LayoutBackground position="absolute" top="0" left="0" zIndex="-1" />
+      </Box>
+    </>
   );
 };
 
