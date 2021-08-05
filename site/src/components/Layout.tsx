@@ -52,7 +52,7 @@ const Layout = ({
     <>
       <Helmet>
         <link rel="prefetch" href="/" />
-        <link rel="prefetch" href="/project" />
+        <link rel="prefetch" href="/projects" />
         <link rel="prefetch" href="/contact" />
       </Helmet>
       <Box position="relative">
