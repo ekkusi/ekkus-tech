@@ -21,6 +21,7 @@ type LayoutProps = {
 };
 
 const LayoutBackground = ({ children, ...boxProps }: BoxProps) => {
+  const terve = "terve";
   return (
     <Box
       backgroundImage="/lined-paper-2.jpg"
