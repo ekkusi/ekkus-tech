@@ -1,5 +1,6 @@
 import { Box, BoxProps, Flex } from "@chakra-ui/react";
 import { Link } from "gatsby";
+import { HoverUnderline } from "gatsby-theme-ekkus-design-library";
 import React from "react";
 
 type FooterProps = BoxProps & {};
@@ -17,9 +18,15 @@ const Footer = ({ ...boxProps }: FooterProps): JSX.Element => {
         textTransform="uppercase"
         pt="5"
       >
-        <Link to="/">Kotipuu</Link>
-        <Link to="/projects">Projektit</Link>
-        <Link to="/contact">Ota yhteyttä</Link>
+        <Link to="/">
+          <HoverUnderline>Kotipuu</HoverUnderline>
+        </Link>
+        <Link to="/projects">
+          <HoverUnderline>Projektit</HoverUnderline>
+        </Link>
+        <Link to="/contact">
+          <HoverUnderline>Ota yhteyttä</HoverUnderline>
+        </Link>
       </Flex>
     </Box>
   );

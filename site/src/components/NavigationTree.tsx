@@ -54,9 +54,7 @@ const NavigationTree = ({
   transitionDelay = 0,
   ...boxProps
 }: NavigationTreeProps): JSX.Element => {
-  const hasVisitedFrontPage = useGlobal(
-    (state) => state.hasVisitedFrontPage
-  )[0];
+  const hasVisitedFrontPage = useGlobal("hasVisitedFrontPage")[0];
   const [isHoveringProjects, setIsHoveringProjects] = useState(false);
   const [isHoveringContact, setIsHoveringContact] = useState(false);
 
@@ -160,11 +158,9 @@ const NavigationTree = ({
           delay={hasVisitedFrontPage ? 0.5 : 3 + transitionDelay}
           duration={1}
           onMouseEnter={() => {
-            console.log("Mouse enter projects");
             setIsHoveringProjects(true);
           }}
           onMouseLeave={() => {
-            console.log("Mouse leave projects");
             setIsHoveringProjects(false);
           }}
         >

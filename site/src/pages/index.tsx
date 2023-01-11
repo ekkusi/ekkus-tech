@@ -26,11 +26,9 @@ interface IndexPageProps {
 
 const MotionText = chakraMotionWrapper(Text);
 
-const IndexPage = ({ data }: IndexPageProps) => {
-  const setHasVisitedFrontPage = useGlobal(
-    () => {},
-    (actions) => actions.setHasVisitedFrontPage
-  )[1];
+function IndexPage({ data }: IndexPageProps) {
+  const setHasVisitedFrontPage = useGlobal("hasVisitedFrontPage")[1]
+
   useEffect(() => {
     globalHistory.listen((routeProps) => {
       if (routeProps.action === "PUSH") {
@@ -64,6 +62,8 @@ const IndexPage = ({ data }: IndexPageProps) => {
       <Flex position="absolute" bottom="0">
         <Text
           as="a"
+          display="flex"
+          alignItems="flex-end"
           href="https://fi.linkedin.com/in/ekku-sipila"
           target="_blank"
           mr="5"
@@ -72,7 +72,8 @@ const IndexPage = ({ data }: IndexPageProps) => {
           <HoverUnderline as="span">Linkedin</HoverUnderline>
         </Text>
         <Text
-          display="inline-block"
+          display="flex"
+          alignItems="flex-end"
           as="a"
           href="https://github.com/ekkusi"
           target="_blank"
@@ -83,7 +84,7 @@ const IndexPage = ({ data }: IndexPageProps) => {
       </Flex>
     </Layout>
   );
-};
+}
 
 export default IndexPage;
 

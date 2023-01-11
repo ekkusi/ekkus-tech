@@ -20,7 +20,7 @@ type LayoutProps = {
   exitAnimation?: TargetAndTransition;
 };
 
-const LayoutBackground = ({ children, ...boxProps }: BoxProps) => {
+function LayoutBackground({ children, ...boxProps }: BoxProps) {
   return (
     <Box
       backgroundImage="/lined-paper-2.jpg"
@@ -33,9 +33,9 @@ const LayoutBackground = ({ children, ...boxProps }: BoxProps) => {
       {children}
     </Box>
   );
-};
+}
 
-const Layout = ({
+function Layout({
   title,
   noFooter = false,
   children,
@@ -47,13 +47,19 @@ const Layout = ({
     rotateX: "-180deg",
     translateY: "-45%",
   },
-}: LayoutProps) => {
+}: LayoutProps) {
   return (
     <>
+      {/* @ts-ignore */}
       <Helmet>
         <link rel="prefetch" href="/" />
         <link rel="prefetch" href="/projects" />
         <link rel="prefetch" href="/contact" />
+        <link rel="preload" href="fonts/whatever-it-takes.ttf" as="font" type="font/ttf" />
+        <link rel="preload" href="fonts/StayWriter-Handmade.ttf" as="font" type="font/ttf" />
+        <link rel="preload" href="fonts/StayWriter-Bold.ttf" as="font" type="font/ttf" />
+        <link rel="preload" href="fonts/whatever-it-takes-bold.ttf" as="font" type="font/ttf" />
+
       </Helmet>
       <Box position="relative">
         <motion.div
@@ -91,6 +97,6 @@ const Layout = ({
       </Box>
     </>
   );
-};
+}
 
 export default Layout;

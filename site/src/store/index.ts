@@ -1,16 +1,6 @@
-import React from "react";
-import globalHook from "use-global-hook";
-import actions from "./actions";
-import { GlobalState, ActionTypes } from "./types";
+import { createGlobalState } from 'react-hooks-global-state';
 
-const initialState: GlobalState = {
-  hasVisitedFrontPage: false,
-};
+const initialState = { hasVisitedFrontPage: false };
+const { useGlobalState } = createGlobalState(initialState);
 
-const useGlobal = globalHook<GlobalState, ActionTypes>(
-  React,
-  initialState,
-  actions
-);
-
-export default useGlobal;
+export default useGlobalState;

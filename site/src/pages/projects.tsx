@@ -15,6 +15,8 @@ const ProjectsPage = ({
     num *= Math.round(Math.random()) ? 1 : -1; // this will add
     return num;
   };
+  console.log(data);
+  
 
   return (
     <Layout title="Projektit">
@@ -23,7 +25,6 @@ const ProjectsPage = ({
       </Heading.H1>
       <Flex wrap="wrap" justifyContent="space-around" px={{ base: 3, sm: 2 }}>
         {data.allSanityProject.edges.map(({ node }) => (
-          <>
             <PolaroidContainer
               key={node.id}
               title={node.name || ""}
@@ -59,7 +60,6 @@ const ProjectsPage = ({
                 </Text>
               )}
             </PolaroidContainer>
-          </>
         ))}
       </Flex>
     </Layout>

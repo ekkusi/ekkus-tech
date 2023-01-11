@@ -7,25 +7,25 @@
   "author": "ekkusi <ekku.eki@gmail.com>",
   "license": "UNLICENSED",
   "scripts": {
-    "start": "sanity start",
-    "build": "sanity build"
+    "start": "npx @sanity/cli start",
+    "build": "npx @sanity/cli build"
   },
   "keywords": [
     "sanity"
   ],
   "dependencies": {
-    "@sanity/base": "^2.12.2",
-    "@sanity/components": "^2.2.6",
-    "@sanity/core": "^2.12.2",
-    "@sanity/dashboard": "^2.10.5",
-    "@sanity/default-layout": "^2.12.2",
-    "@sanity/default-login": "^2.11.1",
-    "@sanity/desk-tool": "^2.12.2",
-    "@sanity/vision": "^2.11.2",
-    "prop-types": "^15.7",
-    "react": "^17.0",
-    "react-dom": "^17.0",
-    "sanity-plugin-dashboard-widget-netlify": "^1.1.0"
+    "@sanity/base": "^2.35.2",
+    "@sanity/components": "^2.14.0",
+    "@sanity/core": "^2.35.0",
+    "@sanity/dashboard": "^3.1.2",
+    "@sanity/default-layout": "^2.35.2",
+    "@sanity/default-login": "^2.35.2",
+    "@sanity/desk-tool": "^2.35.2",
+    "@sanity/vision": "^3.2.0",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sanity-plugin-dashboard-widget-netlify": "^2.0.1"
   },
   "devDependencies": {}
 }

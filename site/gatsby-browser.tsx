@@ -7,7 +7,7 @@ import { Global } from "@emotion/react";
 export const wrapPageElement = ({ element }: WrapPageElementNodeArgs) => {
   return (
     <>
-      <AnimatePresence exitBeforeEnter>{element}</AnimatePresence>
+      <AnimatePresence mode="wait">{element}</AnimatePresence>
       <Global
         styles={`
           /* latin */
