@@ -55,10 +55,10 @@ function Layout({
         <link rel="prefetch" href="/" />
         <link rel="prefetch" href="/projects" />
         <link rel="prefetch" href="/contact" />
-        <link rel="preload" href="fonts/whatever-it-takes.ttf" as="font" type="font/ttf" />
-        <link rel="preload" href="fonts/StayWriter-Handmade.ttf" as="font" type="font/ttf" />
-        <link rel="preload" href="fonts/StayWriter-Bold.ttf" as="font" type="font/ttf" />
-        <link rel="preload" href="fonts/whatever-it-takes-bold.ttf" as="font" type="font/ttf" />
+        <link rel="preload" href="fonts/whatever-it-takes.ttf" as="font" type="font/ttf" crossOrigin="anonymous" />
+        <link rel="preload" href="fonts/StayWriter-Handmade.ttf" as="font" type="font/ttf" crossOrigin="anonymous" />
+        <link rel="preload" href="fonts/StayWriter-Bold.ttf" as="font" type="font/ttf" crossOrigin="anonymous" />
+        <link rel="preload" href="fonts/whatever-it-takes-bold.ttf" as="font" type="font/ttf" crossOrigin="anonymous" />
 
       </Helmet>
       <Box position="relative">
